@@ -4,14 +4,6 @@
 #exec > >(tee xwvb_output.log)
 #exec 2>&1
 
-# Check if a command is available
-check_command() {
-    if ! command -v "$1" &>/dev/null; then
-        echo "Command not found: $1"
-        exit 1
-    fi
-}
-
 # Check the Linux distribution
 check_distro() {
     if [ -f "/etc/os-release" ] && grep -qi "debian" /etc/os-release; then
@@ -37,7 +29,7 @@ check_distro() {
 
 # Check if Flatpak is installed and install it if not
 inst_flatpak() {
-    if ! check_command -v flatpak &>/dev/null; then
+    if ! command -v flatpak &>/dev/null; then
         echo "Flatpak is not installed. Installing..."
         # Check the package manager used by the distro and install Flatpak accordingly
         if [ -f "/etc/os-release" ] && grep -qi "debian" /etc/os-release; then
