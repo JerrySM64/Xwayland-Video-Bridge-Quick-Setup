@@ -56,7 +56,11 @@ inst_flatpak() {
         elif [ -f "/etc/os-release" ] && grep -qi "arch" /etc/os-release; then
             sudo pacman -Syu --noconfirm flatpak
         elif [ -f "/etc/os-release" ] && grep -qi "gentoo" /etc/os-release; then
-            echo "sys-apps/flatpak X policykit seccomp systemd" | sudo tee /etc/portage/package.use/flatpak-xwvb-script
+            if ! check_command -v systemctl &>/dev/null; then
+                echo "sys-apps/flatpak X policykit seccomp" | sudo tee /etc/portage/package.use/flatpak-xwvb-script
+            else
+                echo "sys-apps/flatpak X policykit seccomp systemd" | sudo tee /etc/portage/package.use/flatpak-xwvb-script
+            fi
             sudo emerge -q sys-apps/flatpak
         elif [ -f "/etc/os-release" ] && grep -qi "void" /etc/os-release; then
             sudo xbps-install -S flatpak
