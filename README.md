@@ -1,5 +1,5 @@
-# Xwayland-Video-Bridge-Quick-Setup
-Quick Setup Script to install the XWayland Video Bridge made by KDE. It installs Flatpak (if not already installed), adds Flathub and KDEApps as the repositories and installs the XWayland Video Bridge Flatpak.
+# Xwayland Video Bridge Quick Setup TESTING
+Quick Setup Script to install the XWayland Video Bridge made by KDE. It installs Flatpak (if not already installed), adds Flathub and KDEApps as the repositories and installs the XWayland Video Bridge Flatpak. **THIS IS THE TESTING BRANCH! USE AT YOUR OWN RISK!**
 
 ## Supported Distros:
 * Arch Linux
@@ -18,4 +18,4 @@ Quick Setup Script to install the XWayland Video Bridge made by KDE. It installs
   Yes. Right now, I'm looking at adding support for Solus and maybe MX Linux.
 
   ## Gotchas
-  * Installation on Gentoo may fail. The reason for that is that the script creates a flatpak-xwvb-script file with Flatpak's USE Flags in /etc/portage/package.use and systemd is part of those USE flags. This **may** lead to issues with Gentoo on OpenRC. If you're using OpenRC on Gentoo, remove the systemd USE Flag or if you're sure you already have those in your make.conf, you can remove the line altoghether
+  * Installation on Gentoo may be flaky. I added a check for systemd on Gentoo, but I can't test it right now due to my Gentoo VM being borked. When you want to use it, be aware that this is untested!
