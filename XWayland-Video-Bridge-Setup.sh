@@ -66,13 +66,13 @@ inst_flatpak() {
 add_repos() {
     echo "Adding repositories..."
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    flatpak remote-add --if-not-exists kdeapps https://distribute.kde.org/kdeapps.flatpakrepo
+    flatpak remote-add --if-not-exists kdeapps https://distribute.kde.org/flatpak-apps-testing/
 }
 
 # Install the XWayland Video Bridge
 inst_xwvb() {
     echo "Installing XWayland Video Bridge..."
-    flatpak install kdeapps org.kde.xwaylandvideobridge
+    flatpak install --user --or-update https://cdn.kde.org/flatpak/xwaylandvideobridge-nightly/org.kde.xwaylandvideobridge.flatpakref
 }
 
 # Executing all functions
@@ -86,3 +86,4 @@ inst_xwvb
 
 # It's done, yay!
 echo "XWayland Video Bridge installed successfully. Have fun!"
+
