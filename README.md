@@ -1,3 +1,6 @@
+> # This project is discontinued!
+> KDE discontinued the Xwayland Video Bridge and took down the repository from their Git instance. Because of that, there is no way to install it as a standalone thing anymore, making this project obsolete.
+
 # Xwayland-Video-Bridge-Quick-Setup
 Quick Setup Script to install the XWayland Video Bridge made by KDE. It installs Flatpak (if not already installed), adds Flathub and KDEApps as the repositories and installs the XWayland Video Bridge Flatpak.
 
