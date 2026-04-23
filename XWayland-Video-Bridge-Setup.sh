@@ -66,7 +66,7 @@ inst_flatpak() {
 add_repos() {
     echo "Adding repositories..."
     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    flatpak remote-add --if-not-exists kdeapps https://distribute.kde.org/flatpak-apps-testing/
+    flatpak remote-add --if-not-exists kdeapps https://cdn.kde.org/flatpak/
 }
 
 # Install the XWayland Video Bridge
